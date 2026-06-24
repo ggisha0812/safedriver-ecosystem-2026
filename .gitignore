@@ -1,26 +1,8 @@
-# Entornos virtuales de Python (Linux/Mac/Windows)
-venv/
-.venv/
-env/
-__pycache__/
-*.pyc
-
-# Base de datos local
-*.db
-*.sqlite3
-
-# Archivos de compilación de Godot
-.godot/
-*.translation
-
-# Carpetas de dependencias móviles (Flutter/React Native)
-node_modules/
 .dart_tool/
-.packages
+.pub/
 build/
-
-# Configuraciones de editores y sistema operativo
-.vscode/
-*.code-workspace
-.directory
-.Thums.db
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+.generated/
+*.lock

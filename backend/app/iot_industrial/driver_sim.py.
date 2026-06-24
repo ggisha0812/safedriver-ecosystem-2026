@@ -1,0 +1,26 @@
+import requests
+import time
+import random
+
+# La URL de tu API
+URL = "http://localhost:8000/iot/telemetria"
+# IMPORTANTE: Debes usar el mismo token que obtienes al loguearte
+TOKEN = "TU_TOKEN_JWT_AQUI" 
+HEADERS = {"Authorization": f"Bearer {TOKEN}"}
+
+def simular_conduccion():
+    while True:
+        data = {
+            "velocidad": random.uniform(20.0, 120.0),
+            "fatiga": random.choice([True, False]),
+            "vehiculo_id": "V-001"
+        }
+        try:
+            res = requests.post(URL, json=data, headers=HEADERS)
+            print(f"Estado enviado: {data} | Servidor respondió: {res.status_code}")
+        except:
+            print("Error: Asegúrate de que el Backend esté corriendo")
+        time.sleep(3)
+
+if __name__ == "__main__":
+    simular_conduccion()
